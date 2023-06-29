@@ -1,6 +1,8 @@
-import { SafeAreaView, View, Text, Image, TextInput } from 'react-native'
+import { SafeAreaView, View, Text, Image, TextInput, ScrollView } from 'react-native'
 import React, { useLayoutEffect } from 'react'
 import { useNavigation } from '@react-navigation/native'
+
+import Categories from '../components/categories';
 
 import { Ionicons, Feather } from '@expo/vector-icons';
 
@@ -48,7 +50,13 @@ const HomeScreen = () => {
           <Ionicons name="filter" size={28} color="#00CCBB" />
         </View>
 
-        {/* Content */}
+        {/* Body */}
+        <ScrollView className="bg-gray-100">
+            {/* Categories */}
+            <Categories />
+
+            {/* Featured Rows */}
+        </ScrollView>
 
     </SafeAreaView>
   )
