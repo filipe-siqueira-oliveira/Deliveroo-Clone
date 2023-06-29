@@ -3,6 +3,7 @@ import React, { useLayoutEffect } from 'react'
 import { useNavigation } from '@react-navigation/native'
 
 import Categories from '../components/categories';
+import FeaturedRow from '../components/featuredRow';
 
 import { Ionicons, Feather } from '@expo/vector-icons';
 
@@ -55,7 +56,27 @@ const HomeScreen = () => {
             {/* Categories */}
             <Categories />
 
-            {/* Featured Rows */}
+            {/* Featured */}
+            <FeaturedRow
+              id="123"
+              title="Featured"
+              description="Paid placements from our partners"
+            />
+
+            {/* Tasty Discounts */}
+            <FeaturedRow
+              id="1234"
+              title="Tasty Discounts"
+              description="Paid placements from our partners"
+            />
+
+            {/* Offers near you */}
+            <FeaturedRow
+              id="12345"
+              title="Offers near you"
+              description="Paid placements from our partners"
+            />
+
         </ScrollView>
 
     </SafeAreaView>
