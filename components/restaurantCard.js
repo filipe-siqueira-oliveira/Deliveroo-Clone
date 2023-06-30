@@ -3,6 +3,7 @@ import React from 'react'
 
 import { FontAwesome } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
+import { urlFor } from '../sanity';
 
 const RestaurantCard = ({
   id, 
@@ -20,7 +21,7 @@ const RestaurantCard = ({
     <TouchableOpacity className="bg-white mr-3 shadow">
       <Image
         source={{
-          uri: imgUrl
+          uri: urlFor(imgUrl).url(),
         }}
         className="h-36 w-64 rounded-sm"
       />
