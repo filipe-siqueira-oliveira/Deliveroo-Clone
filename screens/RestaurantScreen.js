@@ -3,6 +3,8 @@ import React, { useLayoutEffect } from 'react'
 import { useNavigation, useRoute } from '@react-navigation/native'
 import { urlFor } from '../sanity'
 
+import DishRow from '../components/dishRow'
+
 import { AntDesign } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
@@ -82,7 +84,16 @@ const RestaurantScreen = () => {
         </Text>
 
         {/* Dishrows */}
-        
+        {dishes.map((dish) => (
+          <DishRow 
+            key={dish._id}
+            id={dish._id}
+            name={dish.name}
+            description={dish.short_description}
+            price={dish.price}
+            image={dish.image}
+          />
+        ))}
 
       </View>
     </ScrollView>
