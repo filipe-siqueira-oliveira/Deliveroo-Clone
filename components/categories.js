@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react'
 
 import CategoryCard from './categoryCard'
 import client, { urlFor } from '../sanity'
-import category from '../cornsilk-spider/schemas/category'
 
 const Categories = () => {
   const [categories, setCategories] = useState()
