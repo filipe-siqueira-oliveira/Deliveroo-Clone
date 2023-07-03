@@ -1,4 +1,4 @@
-import { SafeAreaView, View, Text, Image, TextInput, ScrollView } from 'react-native'
+import { SafeAreaView, View, Text, Image, TextInput, ScrollView, Dimensions } from 'react-native'
 import React, { useEffect, useLayoutEffect, useState } from 'react'
 import { useNavigation } from '@react-navigation/native'
 
@@ -34,6 +34,8 @@ const HomeScreen = () => {
       setFeaturedCategories(data)
     })
   }, [])
+
+  const screenHeight = Dimensions.get("window").height
 
   return (
     <SafeAreaView className="bg-white p-5">
@@ -71,20 +73,21 @@ const HomeScreen = () => {
         </View>
 
         {/* Body */}
-        <ScrollView className="bg-gray-100">
-            {/* Categories */}
-            <Categories />
-
-            {/* Featured */}
-            {featuredCategories?.map((category) => (
-              <FeaturedRow
-                key={category._id}
-                id={category._id}
-                title={category.name}
-                description={category.short_description}
-              />
-            ))}
-        </ScrollView>
+        <View style={{height: 525}}>
+          <ScrollView className="bg-gray-100">
+              {/* Categories */}
+              <Categories />
+              {/* Featured */}
+              {featuredCategories?.map((category) => (
+                <FeaturedRow
+                  key={category._id}
+                  id={category._id}
+                  title={category.name}
+                  description={category.short_description}
+                />
+              ))}
+          </ScrollView>
+        </View>
 
     </SafeAreaView>
   )
