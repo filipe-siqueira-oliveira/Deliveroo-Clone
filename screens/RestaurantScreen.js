@@ -102,7 +102,7 @@ const RestaurantScreen = () => {
             </TouchableOpacity>
         </View>
 
-        <View className="pb-36">
+        <View className="pb-32">
           <Text className="px-4 pt-6 mb-3 font-bold text-xl">
             Menu
           </Text>
@@ -117,6 +117,8 @@ const RestaurantScreen = () => {
               price={dish.price}
               image={dish.image}
             />
+
+            
           ))}
 
         </View>
